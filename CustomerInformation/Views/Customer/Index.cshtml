@@ -1,0 +1,76 @@
+﻿
+@{
+    ViewBag.Title = "Index";
+}
+
+<h2>Customer Information</h2>
+<form action="/" method="post">
+    <table>
+        <tr>
+            <td><label>Name</label></td>
+            <td><input type="text" name="Name" /></td>
+        </tr>
+        <tr>
+            <td><label>Address</label></td>
+            <td><input type="text" name="Address" /></td>
+        </tr>
+        <tr>
+            <td><label>City</label></td>
+            <td><input type="text" name="City" /></td>
+        </tr>
+        <tr>
+            <td><label>Sex</label></td>
+            <td>
+                <input type="radio" name="Sex" value="Male" checked> Male
+                <input type="radio" name="Sex" value="Female"> Female
+                <input type="radio" name="Sex" value="Other"> Other
+            </td>
+        </tr>
+        <tr>
+            <td><label>Religion</label></td>
+            <td>
+                <select name="Religion">
+                    <option value="" selected="selected" disabled="disabled">-- select one --</option>
+                    <option value="Islam">Islam</option>
+                    <option value="Hinduism">Hinduism</option>
+                    <option value="Christianity">Christianity</option>
+                    <option value="Buddhism">Buddhism</option>
+                </select>
+            </td>
+        </tr>
+        <tr>
+            <td><label>Birth Date</label></td>
+            <td><input type="date" name="BirthDate" /></td>
+        </tr>
+        <tr>
+            <td><button type="submit">Submit</button></td>
+            <td><button type="reset">Reset</button></td>
+        </tr>
+    </table>
+</form>
+
+<br />
+<br />
+<br />
+<h2>Customer List</h2>
+<table class="table-bordered">
+    <tr>
+        <th>Customer Name</th>
+        <th>Address</th>
+        <th>City</th>
+        <th>Sex</th>
+        <th>Religion</th>
+        <th>Birth Date</th>
+    </tr>
+    @foreach (var item in Model)
+    {
+        <tr>
+            <td>@item.Name</td>
+            <td>@item.Address</td>
+            <td>@item.City</td>
+            <td>@item.Sex</td>
+            <td>@item.Religion</td>
+            <td>@item.BirthDate</td>
+        </tr>
+    }
+</table>
